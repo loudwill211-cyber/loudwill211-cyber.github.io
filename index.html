@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoFlix SidNet</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #c00, #800);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-size: 28px; font-weight: 800; letter-spacing: 2px; }
+    .logo span { color: #ff6666; }
+    nav a {
+      color: #fff; text-decoration: none; margin-left: 20px;
+      font-size: 14px; opacity: 0.8;
+    }
+    nav a:hover { opacity: 1; }
+    .hero {
+      background: linear-gradient(180deg, #1a0000 0%, #0a0a0a 100%);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; }
+    .hero h1 span { color: #cc0000; }
+    .hero p { font-size: 18px; color: #aaa; max-width: 600px; margin: 0 auto 40px; }
+    .badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      background: #cc0000; color: #fff; padding: 12px 28px;
+      border-radius: 8px; text-decoration: none; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .badge:hover { background: #aa0000; }
+    .badge.secondary {
+      background: transparent; border: 2px solid #cc0000; color: #cc0000;
+    }
+    .apps {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .apps h2 { font-size: 28px; margin-bottom: 30px; text-align: center; }
+    .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .app-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .app-card:hover { border-color: #cc0000; }
+    .app-icon {
+      width: 64px; height: 64px;
+      background: #cc0000;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .app-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .app-card p { color: #888; font-size: 14px; line-height: 1.6; }
+    .app-tag {
+      display: inline-block;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 12px;
+    }
+    footer {
+      background: #111;
+      border-top: 1px solid #222;
+      padding: 30px 40px;
+      text-align: center;
+      color: #555;
+      font-size: 13px;
+    }
+    footer a { color: #cc0000; text-decoration: none; }
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; flex-direction: column; gap: 12px; }
+      .hero { padding: 50px 20px; }
+      .hero h1 { font-size: 32px; }
+      .apps { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NoFlix <span>SidNet</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="app-ads.txt">app-ads.txt</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>NoFlix <span>SidNet</span></h1>
+  <p>Aplicativos de qualidade para entretenimento, saúde e bem-estar.</p>
+  <div class="badges">
+    <a href="https://play.google.com/store/apps/developer?id=Techno+Hub+007" class="badge">📱 Google Play</a>
+    <a href="privacy.html" class="badge secondary">Privacidade</a>
+  </div>
+</div>
+
+<section class="apps">
+  <h2>Nossos Apps</h2>
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-icon">📺</div>
+      <h3>SidNet</h3>
+      <p>Canais de TV, filmes e séries. Entretenimento completo na palma da sua mão.</p>
+      <span class="app-tag">com.sidnet.inc</span>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">❤️</div>
+      <h3>NoFlix Saúde</h3>
+      <p>Seu guia completo de saúde e bem-estar. Nutrição, exercícios e muito mais.</p>
+      <span class="app-tag">com.sobuj.bmicalculator</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NoFlix SidNet. Todos os direitos reservados.</p>
+  <p style="margin-top: 8px;">
+    <a href="privacy.html">Política de Privacidade</a> · 
+    <a href="app-ads.txt">app-ads.txt</a>
+  </p>
+</footer>
+
+</body>
+</html>
