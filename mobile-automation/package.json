@@ -5,7 +5,11 @@
   "main": "automation.js",
   "scripts": {
     "start": "node automation.js",
-    "test": "node automation.js --test",
+    "headed": "node automation.js --headed",
+    "iphone": "node automation.js --headed --device=iPhone 14",
+    "samsung": "node automation.js --headed --device=Samsung Galaxy S23",
+    "pixel": "node automation.js --headed --device=Pixel 7",
+    "ipad": "node automation.js --headed --device=iPad Air",
     "multi": "node multi-device.js"
   },
   "dependencies": {

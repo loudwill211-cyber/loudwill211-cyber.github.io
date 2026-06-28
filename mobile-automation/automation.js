@@ -3,7 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const { TARGET_URL, MOBILE_DEVICES, AUTOMATION_CONFIG } = require('./config');
 
-const device = MOBILE_DEVICES['iPhone 14'];
+const args = process.argv.slice(2);
+const headed = args.includes('--headed') || args.includes('--visible');
+const deviceName = args.find(a => a.startsWith('--device='))?.split('=')[1] || 'iPhone 14';
+
+const device = MOBILE_DEVICES[deviceName] || MOBILE_DEVICES['iPhone 14'];
 const screenshotDir = path.resolve(__dirname, AUTOMATION_CONFIG.screenshotDir);
 
 if (!fs.existsSync(screenshotDir)) {
@@ -31,13 +35,14 @@ async function withRetry(fn, retries = AUTOMATION_CONFIG.retries) {
 }
 
 async function automate() {
-  log('Launching browser in mobile mode (iPhone 14)...');
+  log(`Launching browser in mobile mode (${deviceName}) — ${headed ? 'VISIBLE (headed)' : 'headless'}...`);
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_BROWSERS_PATH
       ? `${process.env.PLAYWRIGHT_BROWSERS_PATH}/chromium`
       : undefined,
-    headless: AUTOMATION_CONFIG.headless,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    headless: headed ? false : AUTOMATION_CONFIG.headless,
+    slowMo: headed ? 500 : 0,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
   });
 
   const context = await browser.newContext({
