@@ -1,0 +1,17 @@
+{
+  "name": "mobile-automation",
+  "version": "1.0.0",
+  "description": "Mobile automation for teaserfast.ru using Playwright",
+  "main": "automation.js",
+  "scripts": {
+    "start": "node automation.js",
+    "test": "node automation.js --test",
+    "multi": "node multi-device.js"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
