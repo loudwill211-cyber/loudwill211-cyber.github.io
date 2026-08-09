@@ -1,0 +1,21 @@
+{
+  "name": "mobile-automation",
+  "version": "1.0.0",
+  "description": "Mobile automation for teaserfast.ru using Playwright",
+  "main": "automation.js",
+  "scripts": {
+    "start": "node automation.js",
+    "headed": "node automation.js --headed",
+    "iphone": "node automation.js --headed --device=iPhone 14",
+    "samsung": "node automation.js --headed --device=Samsung Galaxy S23",
+    "pixel": "node automation.js --headed --device=Pixel 7",
+    "ipad": "node automation.js --headed --device=iPad Air",
+    "multi": "node multi-device.js"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
